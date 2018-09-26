@@ -1,0 +1,22 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'application'
+
+group = 'br.com.neogrid'
+version = '1.0'
+mainClassName = 'br.com.desafio.DesafioApplicationRunner'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+
+task desafio(type: JavaExec) {
+  classpath sourceSets.main.runtimeClasspath
+  main = "br.com.neogrid.DesafioApplicationRunner"
+}
+
+dependencies {
+	compile files('libs/desafio-java-sub-1.0.jar')
+}
